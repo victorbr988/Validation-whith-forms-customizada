@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #130f0d;
+
+    color: #f0f0f5;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+    margin: 32px auto;
+    padding: 32px 64px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+form h2{
+    margin-bottom: 32px;
+}
+
+div.input {
+    margin-bottom: 24px;
+    position: relative; /* faz com que o absolut não seja no contexto do documento*/
+}
+
+input,
+button{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+
+    padding: 16px 0;
+
+    border: none;
+    border-bottom: 1px solid #fd951f;
+
+    background-color: transparent;
+
+    outline: none;
+
+    /*text*/
+    font-size: 1rem;
+    color: #f0f0f5;
+}
+button{
+    background-color: #fd951f;
+}
+
+input ~ label { /* Procure o irmão do input*/
+    position: absolute; /* absoluto dentro do input*/
+    top: 16px;
+    left: 0;
+
+    color: rgba(255, 255, 255, 0.6);
+    transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label{ /* muda a posição quando o input for válido e estiver em foco*/
+    transform: translateY(-24px); /* Mudar a posição do label para cima no eixo */
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.input span.error {
+    display: flex;
+
+    padding: 0;
+
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+    border: 1px solid red;
+    padding: 0.4rem;
+}
+
+
+
+
